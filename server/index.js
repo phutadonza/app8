@@ -12,7 +12,7 @@ app.post('/api/form-post/',(request,respones) =>{
     let msg = request.body.message || ''
     let text = `
         <table border = "1">
-            <captio>ข้อมูลที่ส่งขึ้นไป</captio>
+            <caption>ข้อมูลที่ส่งขึ้นไป</caption>
             <tr><td>ชื่อ: </td><td>${name}</td></tr>
             <tr><td>อีเมล: </td><td>${email}</td></tr>
             <tr><td>ข้อความ: </td><td>${msg}</td></tr>
