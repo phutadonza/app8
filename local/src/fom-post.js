@@ -8,12 +8,12 @@ export default function FormPost(){
         event.preventDefault()
         const formData = new FormData(form.current)
         const formEnt = Object.fromEntries(formData.entries())
-        fetch('api/form-post',{
+        fetch('/api/form-post/',{
             method: 'POST',
             body: JSON.stringify(formEnt),
             headers:{'Content-Type':'application/json'}
         })
-        .then(response = response.text())
+        .then(response => response.text())
         .then(result => setPostedData(result))
         .catch(err => alert(err))
     }
@@ -34,7 +34,7 @@ export default function FormPost(){
                 <button>ตกลง</button>
             </form>
             <br/>
-            <div></div>
+            <div dangerouslySetInnerHTML={{__html:postedData}}></div>
         </div>
     )
 }
